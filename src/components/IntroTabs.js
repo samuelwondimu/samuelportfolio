@@ -5,6 +5,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
+import ProjectsCard from "./ProjectsCard";
+import { Container } from "@material-ui/core";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -56,63 +58,75 @@ export default function IntroTabs() {
   };
 
   return (
-    <div className={classes.root}>
-      <Tabs
-        value={value}
-        onChange={handleChange}
-        aria-label="wrapped label tabs example"
-        centered
-      >
-        <Tab value="one" label="PROJECTS" wrapped {...a11yProps("one")} />
-        <Tab value="two" label="WORK EXPERIENCE" {...a11yProps("two")} />
-        <Tab
-          value="three"
-          label="CURRENTLY WORKING ON"
-          {...a11yProps("three")}
-        />
-        <Tab value="four" label="Download Resume" {...a11yProps("four")} />
-      </Tabs>
-      <TabPanel value={value} index="one">
-        Projects
-      </TabPanel>
-      <TabPanel value={value} index="two">
-        <Box p={3} justifyContent="center" alignItems="center">
-          <Typography align="center" variant="h6">
-            JavaScript mentor for fresh man students
-          </Typography>
-          <Typography align="center">Sep/2018 - March/2020</Typography>
-          <Box p={3} display="flex" justifyContent="center" alignItems="center">
-            <Typography align="center" className={classes.text}>
-              helping freshman students When they are stuck at any particular
-              coding problem, help you decide what best suits your personality,
-              knowledge, or interests; help at achieving their goals, by
-              accelerate their learning. by a great source of new ideas,
-              challenges, and motivation; help with prepare for coding
-              interviews, through a set of appropriate challenges and advise on
-              strategies for tackling the most difficult questions.
+    <Container>
+      <div className={classes.root}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="wrapped label tabs example"
+          centered
+        >
+          <Tab value="one" label="PROJECTS" wrapped {...a11yProps("one")} />
+          <Tab value="two" label="WORK EXPERIENCE" {...a11yProps("two")} />
+          <Tab
+            value="three"
+            label="CURRENTLY WORKING ON"
+            {...a11yProps("three")}
+          />
+          <Tab value="four" label="Download Resume" {...a11yProps("four")} />
+        </Tabs>
+        <TabPanel value={value} index="one">
+          <ProjectsCard />
+        </TabPanel>
+        <TabPanel value={value} index="two">
+          <Box p={3} justifyContent="center" alignItems="center">
+            <Typography align="center" variant="h6">
+              JavaScript mentor for fresh man students
             </Typography>
-          </Box>
-          <Typography align="center" variant="h6">
-            twof time trading plc - React.Js Developer
-          </Typography>
-          <Typography align="center">July/2021 - Present</Typography>
-          <Box p={3} display="flex" justifyContent="center" alignItems="center">
-            <Typography align="center" className={classes.text}>
-              responsible for developing and implementing user interface
-              components using React.js with Material-UI and workflows such as
-              react-query, Flux, and Webpack. Also responsible for profiling and
-              improving front-end performance and documenting our front-end
-              codebase.
+            <Typography align="center">Sep/2018 - March/2020</Typography>
+            <Box
+              p={3}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Typography align="center" className={classes.text}>
+                helping freshman students When they are stuck at any particular
+                coding problem, help you decide what best suits your
+                personality, knowledge, or interests; help at achieving their
+                goals, by accelerate their learning. by a great source of new
+                ideas, challenges, and motivation; help with prepare for coding
+                interviews, through a set of appropriate challenges and advise
+                on strategies for tackling the most difficult questions.
+              </Typography>
+            </Box>
+            <Typography align="center" variant="h6">
+              twof time trading plc - React.Js Developer
             </Typography>
+            <Typography align="center">July/2021 - Present</Typography>
+            <Box
+              p={3}
+              display="flex"
+              justifyContent="center"
+              alignItems="center"
+            >
+              <Typography align="center" className={classes.text}>
+                responsible for developing and implementing user interface
+                components using React.js with Material-UI and workflows such as
+                react-query, Flux, and Webpack. Also responsible for profiling
+                and improving front-end performance and documenting our
+                front-end codebase.
+              </Typography>
+            </Box>
           </Box>
-        </Box>
-      </TabPanel>
-      <TabPanel value={value} index="three">
-        current work
-      </TabPanel>
-      <TabPanel value={value} index="four">
-        Download Resume
-      </TabPanel>
-    </div>
+        </TabPanel>
+        <TabPanel value={value} index="three">
+          current work
+        </TabPanel>
+        <TabPanel value={value} index="four">
+          Download Resume
+        </TabPanel>
+      </div>
+    </Container>
   );
 }

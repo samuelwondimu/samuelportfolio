@@ -38,7 +38,11 @@ export default function IntroPage() {
           FRONT-END DEVELOPER
         </Typography>
         <Box p={3} display="flex" justifyContent="center" alignItems="center">
-          <Typography align="center" className={classes.bio}>
+          <Typography
+            align="center"
+            className={classes.bio}
+            variant="subtitle2"
+          >
             I'm a recent Bachelor in Computer Science graduate i Have worked
             with Front end library such us Reactjs , material ui, bootstrap and
             backend with nodejs epressjs mongo db . currentyl i am learning
